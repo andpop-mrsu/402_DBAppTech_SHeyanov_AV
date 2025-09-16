@@ -1,0 +1,25 @@
+{
+  "name": "openeeer/minesweeper",
+  "description": "Minesweeper Game",
+  "version": "1.0.1",
+  "type": "project",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "openeeer",
+      "email": "openeeer@gmail.com"
+    }
+  ],
+  "require": {
+    "php": ">=7.4",
+    "wp-cli/php-cli-tools": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "openeeer\\Minesweeper\\": "src/"
+    }
+  },
+  "bin": [
+    "bin/minesweeper"
+  ]
+}
