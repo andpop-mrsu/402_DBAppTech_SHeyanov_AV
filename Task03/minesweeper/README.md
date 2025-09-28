@@ -45,6 +45,8 @@
 
 ### Вариант 1: Глобальная установка (Рекомендуется для игры)
 
+-    [Пакет Minesweeper на Packagist](https://packagist.org/packages/openeeer/minesweeper) 
+
 1.  **Установите пакет глобально через Composer:**
     ```bash
     composer global require openeeer/minesweeper
@@ -88,7 +90,7 @@
 -   Победа отображается зелёным цветом.
 -   Можно открывать справку в любой момент во время игры командой `h`.
 
-### Используемые библиотеки
+### Используемые 
 
 -   [Symfony Console](https://symfony.com/doc/current/components/console.html) — используется для цветного вывода.
 -   [PHP CLI Tools](https://github.com/php-lo/php-cli-tools) — используется для консольных утилит.
