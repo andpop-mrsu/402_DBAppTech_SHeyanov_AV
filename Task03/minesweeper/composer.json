@@ -1,0 +1,27 @@
+{
+    "name": "openeeer/minesweeper",
+    "description": "Console Game Minesweeper w/o db",
+    "version": "1.2.0",
+    "require": {
+        "wp-cli/php-cli-tools": "^0.12.6",
+        "symfony/console": "^7.3"
+    },
+    "require-dev": {
+        "squizlabs/php_codesniffer": "^4.0",
+        "phpunit/phpunit": "^12.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "Openeeer\\Minesweeper\\": "src/"
+        }
+    },
+    "bin": [
+        "bin/minesweeper"
+    ],
+    "authors": [
+        {
+            "name": "openeeer",
+            "email": "openeeer@gmail.com"
+        }
+    ]
+}
