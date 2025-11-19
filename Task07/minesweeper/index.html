@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Minesweeper (Web)</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div id="particles-bg"></div>
+
+    <div class="app">
+        <header class="header">
+            <h1>Minesweeper</h1>
+            <div class="controls">
+                <label>Player <input id="playerName" type="text" placeholder="Ваше имя" maxlength="40"></label>
+                <label>Width <input id="widthInput" type="number" min="5" max="50" value="10"></label>
+                <label>Height <input id="heightInput" type="number" min="5" max="50" value="10"></label>
+                <label>Mines <input id="minesInput" type="number" min="1" max="200" value="15"></label>
+                <button id="flagModeBtn" class="secondary" title="Режим установки флажков">🚩</button>
+                <button id="openHistoryBtn" class="secondary">Сыгранные игры</button>
+                <span class="status">
+                    <button id="surrenderBtn" class="danger secondary" disabled>Сдаться</button>
+                    <span id="timer">00:00</span>
+                    <span id="remaining">Mines: 0</span>
+                </span>
+            </div>
+        </header>
+
+        <main class="main">
+            <div class="board-wrap">
+                <div id="board" class="board" role="grid" aria-label="Minesweeper board"></div>
+            </div>
+        </main>
+
+        <div id="loseBanner" class="banner hidden">
+            <div class="banner-content">
+                <div class="banner-title">Вы проиграли!</div>
+                <div class="banner-actions">
+                    <button id="restartBtn">Начать заново</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="winBanner" class="banner hidden">
+            <div class="banner-content">
+                <div class="banner-title win-title">Вы победили!</div>
+                <div class="banner-actions">
+                    <button id="newGameWinBtn" class="win-btn">Новая игра</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="historyModal" class="modal hidden" aria-hidden="true">
+            <div class="modal-backdrop"></div>
+            <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="historyTitle">
+                <div class="modal-header">
+                    <h2 id="historyTitle">Сыгранные игры</h2>
+                    <div class="spacer"></div>
+                    <button id="clearHistoryBtn" class="danger">Очистить</button>
+                    <button id="closeHistoryBtn" class="secondary">Закрыть</button>
+                </div>
+                <div class="modal-body">
+                    <table class="history-table">
+                        <thead id="historyHeader">
+                            <tr>
+                                <th data-sort="player">Игрок</th>
+                                <th data-sort="date">Дата</th>
+                                <th data-sort="size">Размер</th>
+                                <th data-sort="mines">Мины</th>
+                                <th data-sort="seconds">Время</th>
+                                <th data-sort="victory">Результат</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody id="historyBody"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="replayOverlay" class="replay-overlay hidden">
+        <div class="replay-controls">
+            <button id="replayPlayBtn">▶ Авто</button>
+            <button id="replayStepBtn">⏩ Шаг</button>
+            <button id="replayCloseBtn">■ Закрыть</button>
+        </div>
+        <div id="replayStatus" class="replay-status"></div>
+    </div>
+
+    <script type="module" src="./app.js"></script>
+</body>
+
+</html>
